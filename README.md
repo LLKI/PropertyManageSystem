@@ -1,6 +1,8 @@
 # PropertyManageSystem
 这是一个基于ASP.Net Core MVC开发的物业管理系统，实现了小区管理、楼盘管理、物业管理等功能
+
 平台工具：VS,SQLServer,Navicat,ASP.Net Core
+
 页面美化：Clearmin
 ## 后台管理部分
 ### 小区管理
