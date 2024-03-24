@@ -1,0 +1,49 @@
+﻿@model PropertyManageSystem.Models.WSystemParam
+
+@{
+    ViewData["Title"] = "编辑系统参数";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>编辑系统参数</h2></div>
+                <div class="panel-body">
+                    <form asp-action="Edit" style="margin-top:30px;">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="Code" class="control-label">代码:</label>
+                            <input asp-for="Code" class="form-control" />
+                            <span asp-validation-for="Code" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label">名称:</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Type" class="control-label">装修标准:</label>
+                            <select name="type" class="form-control">
+                                <option value="功能信息">功能信息</option>
+                                <option value="单元信息">单元信息</option>
+                                <option value="装修信息">装修信息</option>
+                                <option value="朝向信息">朝向信息</option>
+                                <option value="规格信息">规格信息</option>
+                                <option value="楼宇信息">楼宇信息</option>
+                                <option value="周边设施">周边设施</option>
+                            </select>
+                            <span asp-validation-for="Type" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="保存编辑" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

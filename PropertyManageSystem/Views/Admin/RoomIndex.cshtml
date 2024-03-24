@@ -1,0 +1,84 @@
+﻿@model PropertyManageSystem.Models.WRoomInfo;
+
+@{
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+    ViewBag.Title = "小区管理";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>小区基本信息管理</h3>
+
+                    <table class="table table-bordered" style="margin-top:10px;">
+                        @if(Model!=null)
+                        {
+                            <tr>
+                                <th style="text-align:right;">小区名称:</th>
+                                <td>@Model.CommunityName</td>
+
+                                <th style="text-align:right;"> 联系电话:</th>
+                                <td>@Model.ManagerPhone</td>
+                            </tr>
+
+                            <tr>
+                                <th style="text-align:right;">主要负责人:</th>
+                                <td>@Model.ManagerName</td>
+
+                                <th style="text-align:right;">停车场面积:</th>
+                                <td>@Model.ParkLotArea</td>
+                            </tr>
+
+                            <tr>
+                                <th style="text-align:right;">建造日期:</th>
+                                <td>@Model.ConstructDate.Value.ToString("yyyy/MM/dd")</td>
+
+                                <th style="text-align:right;">道路面积:</th>
+                                <td>@Model.RoadArea</td>
+                            </tr>
+
+                            <tr>
+                                <th style="text-align:right;">建筑面积:</th>
+                                <td>@Model.RoomArea</td>
+
+                                <th style="text-align:right;">绿化面积:</th>
+                                <td>@Model.GreenArea</td>
+                            </tr>
+
+                            <tr>
+                                <th style="text-align:right;">楼宇数量:</th>
+                                <td>@Model.RoomCount</td>
+
+                                <th style="text-align:right;">小区地址:</th>
+                                <td>@Model.CommunityAddress</td>
+                            </tr>
+
+                            <tr>
+                                <th style="text-align:right;">小区说明:</th>
+                                <td colspan="3">@Model.CommunityRemark</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <th style="text-align:center;">
+                                    请先添加一条小区信息到数据库中！
+                                    <a href="/Admin/AddRoom">添加</a>
+                                </th>
+                            </tr>
+                        }
+
+                            <tr>
+                                <th colspan="4" style="text-align:center;">
+                                <input type="button" class="btn btn-default" onclick="javascript:window.location.href='/Admin/UpdateRoom';" value="修改" />
+                                    <input type="button" class="btn btn-default" onclick="javascript:window.history.back();" value="返回" />
+                                </th>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+﻿@model PropertyManageSystem.Models.WPacking
+
+@{
+    ViewData["Title"] = "编辑车位";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>编辑车位</h2></div>
+                <div class="panel-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="form-group">
+                            <label asp-for="PackingName" class="control-label"></label>
+                            <input asp-for="PackingName" class="form-control" />
+                            <span asp-validation-for="PackingName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PackingLot" class="control-label"></label>
+                            <input asp-for="PackingLot" class="form-control" />
+                            <span asp-validation-for="PackingLot" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PackingLotId" class="control-label"></label>
+                            <input asp-for="PackingLotId" class="form-control" />
+                            <span asp-validation-for="PackingLotId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PackingState" class="control-label"></label>
+                            <select class="form-control" name="PackingState">
+                                <option value="0">空闲</option>
+                                <option value="1">已售</option>
+                            </select>
+                            <span asp-validation-for="PackingState" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PackingType" class="control-label"></label>
+                            <select class="form-control" name="PackingType">
+                                <option value="0">空闲车位</option>
+                                <option value="1">高级车位</option>
+                            </select>
+                            <span asp-validation-for="PackingType" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PackingArea" class="control-label"></label>
+                            <input asp-for="PackingArea" class="form-control" />
+                            <span asp-validation-for="PackingArea" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PackingUid" class="control-label"></label>
+                            <select asp-for="PackingUid" class="form-control" asp-items="ViewBag.PackingUid"></select>
+                            <span asp-validation-for="PackingUid" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="保存编辑" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

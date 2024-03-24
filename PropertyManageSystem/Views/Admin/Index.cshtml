@@ -1,0 +1,163 @@
+﻿@{
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+    ViewBag.Title = "首页";
+}
+
+<div class="container-fluid cm-container-white">
+    <h2 style="margin-top:0;">物业管理系统简介</h2>
+    <p>本系统是基于VS2022+SQLServer2022开发的一个.Net Core MVC的物业管理系统</p>
+</div>
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">小区管理</div>
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="/Admin/RoomIndex">小区基本信息</a></li>
+                        <li><a href="/Installations/Create">添加周边设施</a></li>
+                        <li><a href="/Installations/Index">编辑周边设施</a></li>
+                        <li><a href="/Announcements/Create">添加公告</a></li>
+                        <li><a href="/Announcements/Index">编辑公告</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">楼盘管理</div>
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="/Buildings/Create">楼盘信息添加</a></li>
+                        <li><a href="/Buildings/Index">编辑楼盘信息</a></li>
+                        <li><a href="/Packings/Index">车位管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">物业管理</div>
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="/Repairs/Index">住户报修管理</a></li>
+                        <li><a href="/Devices/Index">设备管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row cm-fix-height">
+
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">收费管理</div>
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="/UserPaymoneys/Create">住户费用添加</a></li>
+                        <li><a href="/UserPaymoneys/Index">编辑住户费用</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">用户管理</div>
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="/Users/Create">添加住户信息</a></li>
+                        <li><a href="/Users/Index">编辑住户信息</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">系统管理</div>
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="/System/Index">系统代码维护</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row cm-fix-height">
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">退出</div>
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="/Login/LoginOut">退出登陆</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*    <div class="row cm-fix-height">
+
+    <div class="col-sm-4">
+    <div class="panel panel-default">
+    <div class="panel-heading">投诉管理</div>
+    <div class="panel-body">
+    <a href="#">查看业主反映的问题/意见/建议</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-sm-4">
+    <div class="panel panel-default">
+    <div class="panel-heading">停车位</div>
+    <div class="panel-body">
+    <a href="#">当前小区停车车位</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-sm-4">
+    <div class="panel panel-default">
+    <div class="panel-heading">业主的物业费</div>
+    <div class="panel-body">
+    <a href="#">添加业主的物业费，业主能及时了解目的物业费用</a>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="row cm-fix-height">
+
+    <div class="col-sm-4">
+    <div class="panel panel-default">
+    <div class="panel-heading">用户管理</div>
+    <div class="panel-body">
+    <a href="#">当前小区内用户的账号管理</a>
+    </div>
+    </div>
+    </div>
+
+    @*        <div class="col-sm-4">
+    <div class="panel panel-default">
+    <div class="panel-heading">数据库备份</div>
+    <div class="panel-body">
+    <a href="#">备份系统数据库保障系统的安全</a>
+    </div>
+    </div>
+    </div>
+
+            <div class="col-sm-4">
+    <div class="panel panel-default">
+    <div class="panel-heading">退出</div>
+    <div class="panel-body">
+    <a href="#">退出登陆</a>
+    </div>
+    </div>
+    </div>
+    </div>*@
+</div>

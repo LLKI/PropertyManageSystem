@@ -1,0 +1,90 @@
+﻿@model PropertyManageSystem.Models.WRepair
+
+@{
+    ViewData["Title"] = "报修审核处理";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>报修审核处理</h2></div>
+                <div class="panel-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+
+                        @*基本信息*@
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label"></label>
+                            <label style="line-height:40px;font-weight:normal;margin-left:30px;">@Model.Title</label>
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Createtime" class="control-label"></label>
+                            <label style="line-height:40px;font-weight:normal;margin-left:30px;">@Model.Createtime.Value.ToString("yyyy/MM/dd")</label>
+                            <span asp-validation-for="Createtime" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Describe" class="control-label"></label>
+                            <label style="line-height:40px;font-weight:normal;margin-left:30px;">@Model.Describe</label>
+                            <span asp-validation-for="Describe" class="text-danger"></span>
+                        </div>
+                        <hr/>
+
+                        @*处理*@
+                        <div class="form-group">
+                            <label asp-for="State" class="control-label"></label>
+                            <select class="form-control" name="State">
+                                <option value="1">已审核</option>
+                                <option value="0">未审核</option>
+                                <option value="2">已处理</option>
+                                <option value="3">未处理</option>
+                            </select>                                   
+                            <span asp-validation-for="State" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="RepairWorkInfo" class="control-label"></label>
+                            <input asp-for="RepairWorkInfo" class="form-control" />
+                            <span asp-validation-for="RepairWorkInfo" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="FinalyRepairUser" class="control-label"></label>
+                            <input asp-for="FinalyRepairUser" class="form-control" />
+                            <span asp-validation-for="FinalyRepairUser" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MainRepairUser" class="control-label"></label>
+                            <input asp-for="MainRepairUser" class="form-control" />
+                            <span asp-validation-for="MainRepairUser" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="RepairPhone" class="control-label"></label>
+                            <input asp-for="RepairPhone" class="form-control" />
+                            <span asp-validation-for="RepairPhone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PassDetail" class="control-label"></label>
+                            <input asp-for="PassDetail" class="form-control" />
+                            <span asp-validation-for="PassDetail" class="text-danger"></span>
+                        </div>
+                        @*住户意见*@
+                        <div class="form-group">
+                            <label asp-for="RepeatInfo" class="control-label"></label>
+                            <textarea asp-for="RepeatInfo" rows="5" class="form-control"></textarea>
+                            <span asp-validation-for="RepeatInfo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="保存编辑" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

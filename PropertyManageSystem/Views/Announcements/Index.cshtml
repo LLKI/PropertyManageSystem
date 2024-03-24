@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PropertyManageSystem.Models.WAnnouncement>
+
+@{
+    ViewData["Title"] = "系统公告";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>系统公告</h2></div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Number)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Createtime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nickname)
+                                </th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Number)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @item.Createtime.Value.ToString("yyyy/MM/dd")
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nickname)
+                                    </td>
+                                    <td>
+                                        <a href="/Announcements/Edit/@item.Id" class="btn btn-success">编辑</a>
+                                        <a href="/Announcements/Delete/@item.Id" class="btn btn-danger" onclick="return confirm('是否删除该数据?');">删除</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+﻿@model PropertyManageSystem.Models.WBuilding
+
+@{
+    ViewData["Title"] = "周边设施详情";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>周边设施详情</h2></div>
+                <div class="panel-body">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.RoomName)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.RoomName)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Floors)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Floors)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Height)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Height)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Area)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Area)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Createtime)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Createtime)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Remark)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Remark)
+                        </dd>
+                        <dt>
+                            楼宇类型
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Sp.Name)
+                        </dd>
+                    </dl>
+                </div>
+                <div style="text-align:center;">
+                    <div style="margin-bottom:40px">
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success">编辑</a> 
+                    <a asp-action="Index" class="btn btn-default">返回</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

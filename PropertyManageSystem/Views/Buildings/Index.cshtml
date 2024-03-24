@@ -1,0 +1,79 @@
+﻿@model IEnumerable<PropertyManageSystem.Models.WBuilding>
+
+@{
+    ViewData["Title"] = "编辑楼盘信息";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>编辑楼盘信息</h2></div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RoomName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Floors)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Height)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Area)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Createtime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Remark)
+                                </th>
+                                <th>
+                                    楼宇类型
+                                </th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RoomName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Floors)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Height)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Area)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Createtime)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Remark)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Sp.Name)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">编辑</a>|
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">详情</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" onclick="return confirm('是否删除该数据?')">删除</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

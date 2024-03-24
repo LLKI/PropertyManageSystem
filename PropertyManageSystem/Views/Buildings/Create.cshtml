@@ -1,0 +1,58 @@
+﻿@model PropertyManageSystem.Models.WBuilding
+
+@{
+    ViewData["Title"] = "添加楼盘信息";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>添加楼盘信息</h2></div>
+                <div class="panel-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="RoomName" class="control-label"></label>
+                            <input asp-for="RoomName" class="form-control" />
+                            <span asp-validation-for="RoomName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Floors" class="control-label"></label>
+                            <input asp-for="Floors" class="form-control" />
+                            <span asp-validation-for="Floors" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Height" class="control-label"></label>
+                            <input asp-for="Height" class="form-control" />
+                            <span asp-validation-for="Height" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Area" class="control-label"></label>
+                            <input asp-for="Area" class="form-control" />
+                            <span asp-validation-for="Area" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Createtime" class="control-label"></label>
+                            <input asp-for="Createtime" type="date" class="form-control" />
+                            <span asp-validation-for="Createtime" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SpId" class="control-label"></label>
+                            <select asp-for="SpId" class="form-control" asp-items="ViewBag.SpId"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Remark" class="control-label"></label>
+                            <input asp-for="Remark" class="form-control" />
+                            <span asp-validation-for="Remark" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="保存" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

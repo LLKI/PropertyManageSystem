@@ -1,0 +1,80 @@
+﻿@model IEnumerable<PropertyManageSystem.Models.WDevice>
+
+@{
+    ViewData["Title"] = "物品信息列表";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>物品信息列表</h2></div>
+                <div class="panel-body">
+
+                    @*action为空表示向自己发送请求*@
+                    <form action="" method="get">
+                        <div class="row">
+                            <div class="col-md-1" style="text-align:right;line-height:40px ">
+                                <a asp-action="Create" class="btn btn-success">添加物品</a>
+                            </div>
+                            <div class="col-md-1" style="text-align:right;line-height:40px ">
+                                查询条件:
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" name="keyword" placeholder="请输入物品名关键字查询" />
+                            </div>
+                            <div class="col-md-1">
+                                <input type="submit" class="btn btn-primary" value="查询" />
+                            </div>
+                        </div>
+                    </form>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DeviceId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DeviceName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DeviceDesc)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Createtime)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DeviceId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DeviceName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DeviceDesc)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Createtime)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">编辑</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" onclick="return confirm('是否删除该数据?')">删除</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

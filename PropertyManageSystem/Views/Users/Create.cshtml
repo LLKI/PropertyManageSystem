@@ -1,0 +1,91 @@
+﻿@model PropertyManageSystem.Models.WUser
+
+@{
+    ViewData["Title"] = "添加用户";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>添加用户</h2></div>
+                <div class="panel-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="BuildingId" class="control-label">选择楼宇</label>
+                            <select asp-for="BuildingId" class ="form-control" asp-items="ViewBag.BuildingId"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DanyuanId" class="control-label">选择单元</label>
+                            <select asp-for="DanyuanId" class ="form-control" asp-items="ViewBag.DanyuanId"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="HouseId" class="control-label">选择房间</label>
+                            <select asp-for="HouseId" class ="form-control" asp-items="ViewBag.HouseId"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="UserName" class="control-label"></label>
+                            <input asp-for="UserName" class="form-control" />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="HouseNumber" class="control-label"></label>
+                            <input asp-for="HouseNumber" class="form-control" />
+                            <span asp-validation-for="HouseNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Phone" class="control-label"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="IdNumber" class="control-label"></label>
+                            <input asp-for="IdNumber" class="form-control" />
+                            <span asp-validation-for="IdNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="WorkAddress" class="control-label"></label>
+                            <input asp-for="WorkAddress" class="form-control" />
+                            <span asp-validation-for="WorkAddress" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LinkAddress" class="control-label"></label>
+                            <input asp-for="LinkAddress" class="form-control" />
+                            <span asp-validation-for="LinkAddress" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Username1" class="control-label"></label>
+                            <input asp-for="Username1" class="form-control" />
+                            <span asp-validation-for="Username1" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Remark" class="control-label"></label>
+                            <input asp-for="Remark" class="form-control" />
+                            <span asp-validation-for="Remark" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Createtime" class="control-label"></label>
+                            <input asp-for="Createtime" type="date" class="form-control" />
+                            <span asp-validation-for="Createtime" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="保存" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

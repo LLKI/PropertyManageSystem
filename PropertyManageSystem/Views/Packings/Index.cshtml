@@ -1,0 +1,116 @@
+﻿@model IEnumerable<PropertyManageSystem.Models.WPacking>
+
+@{
+    ViewData["Title"] = "车位管理";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>车位管理</h2></div>
+                <div class="panel-body">
+                    @*action为空表示向自己发送请求*@
+                    <form action="" method="get">
+                        <div class="row">
+                            <div class="col-md-1" style="text-align:right;line-height:40px ">
+                                <a asp-action="Create" class="btn btn-success">新增车位</a>
+                            </div>
+                            <div class="col-md-1" style="text-align:right;line-height:40px ">
+                                查询条件:
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" name="keyword" placeholder="请输入车位名关键字查询" />
+                            </div>
+                            <div class="col-md-1">
+                                <input type="submit" class="btn btn-primary" value="查询" />
+                            </div>
+                        </div>
+                    </form>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PackingName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PackingLot)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PackingLotId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PackingState)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PackingType)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PackingArea)
+                                </th>
+                                <th>
+                                    业主
+                                </th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count() < 1)
+                            {
+                                <tr class="success">
+                                    <th colspan="8" style="text-align:center;">请添加车位！</th>
+                                </tr>
+                            }
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PackingName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PackingLot)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PackingLotId)
+                                    </td>
+                                    <td>
+                                        @if(item.PackingState==1)
+                                        {
+                                            <span>已售</span>
+                                        }
+                                        else
+                                        {
+                                            <span>空闲</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (item.PackingType == 1)
+                                        {
+                                            <span>高级车位</span>
+                                        }
+                                        else
+                                        {
+                                            <span>普通车位</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PackingArea)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Packin.UserName)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">编辑</a>|
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" onclick="return confirm('是否删除该数据?')">删除</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

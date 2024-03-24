@@ -1,0 +1,103 @@
+﻿@model IEnumerable<PropertyManageSystem.Models.WRepair>
+
+@{
+    ViewData["Title"] = "住户报修管理";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>住户报修管理</h2></div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Describe)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Createtime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.State)
+                                </th>
+
+                                <th>
+                                    楼盘名称
+                                </th>
+
+                                <th>
+                                    房号
+                                </th>
+
+                                <th>
+                                    业主名字
+                                </th>
+
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Describe)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Createtime)
+                                    </td>
+                                    <td>
+                                        @if(item.State==1)
+                                        {
+                                            <span style="color:purple">已审核</span>
+                                        }
+                                        else if(item.State==2)
+                                        {
+                                            <span style="color:green">已处理</span>
+                                        }
+                                        else if (item.State == 3)
+                                        {
+                                            <span style="color:orange">未处理</span>
+                                        }
+                                        else
+                                        {
+                                            <span style="color:red">未审核</span>
+                                        }
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Louyu.RoomName)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.House.Title)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UidNavigation.UserName)
+                                    </td>
+
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">编辑</a> |
+                                        <a asp-action="EditState" asp-route-id="@item.Id" class="btn btn-success" onclick="return confirm('是否通过该审核?')">直接审核</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" onclick="return confirm('是否删除该数据?')">删除</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

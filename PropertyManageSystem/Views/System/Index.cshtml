@@ -1,0 +1,124 @@
+﻿@model IEnumerable<PropertyManageSystem.Models.WSystemParam>
+
+@{
+    ViewData["Title"] = "系统参数管理";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>系统参数管理</h2></div>
+                <div class="panel-body">
+                    @*action为空表示向自己发送请求*@
+                    <form action="" method="get">
+                        <div class="row">
+                            <div class="col-md-2" style="text-align:right;line-height:40px ">
+                                请选择参数类别:
+                            </div>
+                            <div class="col-md-2">
+                                <select name="type" class="form-control">
+                                    <option value="">全部</option>
+                                    <option value="功能信息">功能信息</option>
+                                    <option value="单元信息">单元信息</option>
+                                    <option value="装修信息">装修信息</option>
+                                    <option value="朝向信息">朝向信息</option>
+                                    <option value="规格信息">规格信息</option>
+                                    <option value="楼宇信息">楼宇信息</option>
+                                    <option value="周边设施">周边设施</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="submit" class="btn btn-primary" value="查询" />
+                            </div>
+                        </div>
+                    </form>
+
+
+                    <table class="table">
+                        <thead>
+                            <tr style="text-align:center">
+                                <th>
+                                    代码
+                                </th>
+                                <th>
+                                    名称
+                                </th>
+                                <th>
+                                    装修标准
+                                </th>
+                                <th>
+                                    操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Count() < 1)
+                            {
+                                <tr class="success">
+                                    <th colspan="4" style="text-align:center;">请添加系统参数！</th>
+                                </tr>
+                            }
+                            @foreach (var item in Model)
+                            {
+                                <tr class="success">
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Code)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Type)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">编辑</a> |
+                                        <a href="/System/DeleteConfirmed/@item.Id" oncancel="return confirm('是否删除本条数据?')">删除</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    @*实行添加参数操作*@
+                    <form action="/System/Create" style="margin-top:40px;" method="post">
+                        <table class="table">
+                            <tr>
+                                <td>代码:</td>
+                                <td>
+                                    <input class="form-control" value="" name="code" required placeholder="请输入代码!" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>名称:</td>
+                                <td>
+                                    <input class="form-control" value="" name="name" required placeholder="请输入名称!" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>类型:</td>
+                                <td>
+                                    <select name="type" class="form-control">
+                                        <option value="功能信息">功能信息</option>
+                                        <option value="单元信息">单元信息</option>
+                                        <option value="装修信息">装修信息</option>
+                                        <option value="朝向信息">朝向信息</option>
+                                        <option value="规格信息">规格信息</option>
+                                        <option value="楼宇信息">楼宇信息</option>
+                                        <option value="周边设施">周边设施</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <input type="submit" value="保存" class="btn btn-default" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

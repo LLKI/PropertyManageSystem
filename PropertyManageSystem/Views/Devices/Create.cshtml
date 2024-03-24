@@ -1,0 +1,44 @@
+﻿@model PropertyManageSystem.Models.WDevice
+
+@{
+    ViewData["Title"] = "添加物品信息";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>添加物品信息</h2></div>
+                <div class="panel-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="DeviceId" class="control-label"></label>
+                            <input asp-for="DeviceId" class="form-control" />
+                            <span asp-validation-for="DeviceId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DeviceName" class="control-label"></label>
+                            <input asp-for="DeviceName" class="form-control" />
+                            <span asp-validation-for="DeviceName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DeviceDesc" class="control-label"></label>
+                            <input asp-for="DeviceDesc" class="form-control" />
+                            <span asp-validation-for="DeviceDesc" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Createtime" class="control-label"></label>
+                            <input asp-for="Createtime" type="date" class="form-control" />
+                            <span asp-validation-for="Createtime" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="保存" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

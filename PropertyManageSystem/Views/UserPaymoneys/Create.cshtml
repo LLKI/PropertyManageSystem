@@ -1,0 +1,69 @@
+﻿@model PropertyManageSystem.Models.WUserPaymoney
+
+@{
+    ViewData["Title"] = "住户费用添加";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>住户费用添加</h2></div>
+                <div class="panel-body">
+                    <form asp-action="Create">
+
+                        <div class="form-group">
+                            <label asp-for="Title" class="control-label"></label>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="HouseId" class="control-label"></label>
+                            <select asp-for="HouseId" class ="form-control" asp-items="ViewBag.HouseId"></select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Number" class="control-label"></label>
+                            <input asp-for="Number" class="form-control" />
+                            <span asp-validation-for="Number" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Price" class="control-label"></label>
+                            <input asp-for="Price" class="form-control" />
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ShouldPay" class="control-label"></label>
+                            <input asp-for="ShouldPay" class="form-control" />
+                            <span asp-validation-for="ShouldPay" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="RealyPay" class="control-label"></label>
+                            <input asp-for="RealyPay" class="form-control" />
+                            <span asp-validation-for="RealyPay" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NoPay" class="control-label"></label>
+                            <input asp-for="NoPay" class="form-control" />
+                            <span asp-validation-for="NoPay" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="StartPayTime" class="control-label"></label>
+                            <input asp-for="StartPayTime" type="date" class="form-control" />
+                            <span asp-validation-for="StartPayTime" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" style="display:none;">
+                            <label asp-for="ById" class="control-label"></label>
+                            <select asp-for="ById" class ="form-control" asp-items="ViewBag.ById"></select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="保存" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

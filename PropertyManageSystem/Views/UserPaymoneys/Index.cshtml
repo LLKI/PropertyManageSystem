@@ -1,0 +1,92 @@
+﻿@model IEnumerable<PropertyManageSystem.Models.WUserPaymoney>
+
+@{
+    ViewData["Title"] = "住户收费管理";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>住户收费管理</h2></div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Number)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Price)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShouldPay)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RealyPay)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NoPay)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.StartPayTime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th>
+                                    房号
+                                </th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Number)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Price)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShouldPay)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RealyPay)
+                                    </td>
+                                    <td>
+                                        @*@Html.DisplayFor(modelItem => item.NoPay)*@
+                                        @if(item.NoPay==0)
+                                        {
+                                            <span style="color:Green">已结清</span>
+                                        }
+                                        else
+                                        {
+                                            @Html.DisplayFor(modelItem => item.NoPay)
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StartPayTime)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.House.Title)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">编辑</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" onclick="return confirm('是否删除该数据?')">删除</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+﻿@model PropertyManageSystem.Models.WRoomInfo;
+
+@{
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+    ViewBag.Title = "小区添加";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>小区信息添加</h3>
+                    <form action="/Admin/AddRoom" method="post"/>
+                    <table class="table table-bordered" style="margin-top:10px;">
+
+                        <tr>
+                            <th style="text-align:right;">小区名称:</th>
+                            <td>
+                                <input type="text" name="CommunityName" class="form-control" />
+                            </td>
+
+                            <th style="text-align:right;"> 联系电话:</th>
+                            <td>
+                                <input type="text" name="ManagerPhone" class="form-control" />
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <th style="text-align:right;">主要负责人:</th>
+                            <td>
+                                <input type="text" name="ManagerName" class="form-control" />
+                            </td>
+
+                            <th style="text-align:right;">停车场面积:</th>
+                            <td>
+                                <input type="text" name="ParkLotArea" class="form-control" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th style="text-align:right;">建造日期:</th>
+                            <td>
+                                <input type="date" name="ConstructDate" class="form-control" />
+                            </td>
+
+                            <th style="text-align:right;">道路面积:</th>
+                            <td>
+                                <input type="text" name="RoadArea" class="form-control" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th style="text-align:right;">建筑面积:</th>
+                            <td>
+                                <input type="text" name="RoomArea" class="form-control" />
+                            </td>
+
+                            <th style="text-align:right;">绿化面积:</th>
+                            <td>
+                                <input type="text" name="GreenArea" class="form-control" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th style="text-align:right;">楼宇数量:</th>
+                            <td>
+                                <input type="text" name="RoomCount" class="form-control" />
+                            </td>
+
+                            <th style="text-align:right;">小区地址:</th>
+                            <td>
+                                <input type="text" name="CommunityAddress" class="form-control" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th style="text-align:right;">小区说明:</th>
+                            <td colspan="3">
+                                <input type="text" name="CommunityRemark" class="form-control" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="4" style="text-align:center;">
+                                <input type="submit" class="btn btn-default" value="添加"/>
+                                <input type="button" class="btn btn-default" onclick="javascript:window.history.back();" value="返回" />
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

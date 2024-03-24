@@ -1,0 +1,114 @@
+﻿@model IEnumerable<PropertyManageSystem.Models.WUser>
+
+@{
+    ViewData["Title"] = "用户管理";
+    Layout = "~/Views/Shared/_BackAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row cm-fix-height">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h2>用户管理</h2></div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.UserName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.HouseNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Phone)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IdNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.WorkAddress)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LinkAddress)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Username1)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Password)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Createtime)
+                                </th>
+                                <th>
+                                    楼盘名称
+                                </th>
+                                <th>
+                                    单元名称
+                                </th>
+                                <th>
+                                    房号
+                                </th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UserName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HouseNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Phone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IdNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.WorkAddress)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LinkAddress)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Username1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Password)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Createtime)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Building.RoomName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Danyuan.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.House.Title)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">编辑</a>|
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger" onclick="return confirm('是否删除该数据?')">删除</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
