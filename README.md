@@ -3,7 +3,7 @@
 
 平台工具：VS,SQLServer,Navicat,ASP.Net Core
 
-页面美化：Clearmin
+页面美化：clearmin
 ## 后台管理部分
 ### 小区管理
 1. 小区基本信息
