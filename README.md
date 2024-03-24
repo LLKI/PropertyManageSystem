@@ -26,4 +26,10 @@
 1. 系统代码维护
 ### 部分页面展示
 
+![image](https://github.com/LLKI/PropertyManageSystem/assets/92627079/44b06f19-666b-4e8d-82bc-0c768c7bb341)
+
+
+![image](https://github.com/LLKI/PropertyManageSystem/assets/92627079/a7df188a-a970-4ad1-9ea6-9309cef10e3c)
+
+
 ## 前台用户部分
