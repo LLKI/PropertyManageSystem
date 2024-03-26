@@ -4,6 +4,11 @@
 平台工具：VS,SQLServer,Navicat,ASP.Net Core,EF Core
 
 页面美化：clearmin
+
+流程图：
+
+![image](https://github.com/LLKI/PropertyManageSystem/assets/92627079/4ac0a699-1dad-4e7f-a0c5-104496e3bfe0)
+
 ## 后台管理部分
 ### 小区管理
 1. 小区基本信息
