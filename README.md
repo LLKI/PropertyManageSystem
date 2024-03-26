@@ -5,7 +5,7 @@
 
 页面美化：clearmin
 
-流程图：
+结构图：
 
 ![image](https://github.com/LLKI/PropertyManageSystem/assets/92627079/4ac0a699-1dad-4e7f-a0c5-104496e3bfe0)
 
